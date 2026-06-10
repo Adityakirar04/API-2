@@ -10,6 +10,23 @@ const PORT = 8000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// Custom Middleware 1
+app.use((req, res, next) => {
+  console.log("Hello From Middleware 1");
+  next();
+});
+
+// Custom Middleware 2
+app.use((req, res, next) => {
+  fs.appendFile(
+    "log.txt",
+    `\n${Date.now()}: ${req.method}: ${req.path}`,
+    (err) => {
+      next();
+    }
+  );
+});
+
 // Get all users
 app.get("/api/users", (req, res) => {
   return res.json(users);
@@ -33,14 +50,6 @@ app.get("/api/users/:id", (req, res) => {
 // Create user
 app.post("/api/users", (req, res) => {
   const body = req.body;
-
-  console.log("BODY =", body);
-
-  if (!body) {
-    return res.status(400).json({
-      message: "Request body missing",
-    });
-  }
 
   const newUser = {
     id: users.length + 1,

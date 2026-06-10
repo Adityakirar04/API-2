@@ -7999,26 +7999,6 @@
     "gender": "Male",
     "job_title": "Web Developer III"
   },
-  {
-    "id": 1001
-  },
-  {
-    "id": 1002
-  },
-  {
-    "id": 1003,
-    "first_name": "aditya",
-    "last_name": "kirar",
-    "email": "mr.kirar62@gmail.com",
-    "gender": "male",
-    "job_title": "backedn developer"
-  },
-  {
-    "id": 1004,
-    "first_name": "aditya",
-    "last_name": "kirar",
-    "email": "mr.kirar62@gmail.com",
-    "gender": "male",
-    "job_title": "backedn developer"
-  }
+  { "id": 1001 },
+  { "id": 1002 }
 ]
